@@ -2,5 +2,5 @@
 class Square:
     pass
     """
-    creates a squre and do nothing
+    creates a square class object
     """
