@@ -2,6 +2,8 @@
 """
 creates a square class object
 """
+
+
 class Square:
     """
     creates a square class object
