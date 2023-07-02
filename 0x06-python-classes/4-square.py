@@ -1,16 +1,14 @@
 #!/usr/bin/python3
-"""
-classes and objects tasks
-"""
+"""classes and objects tasks."""
 
 
 class Square:
-    """
-    square class
-    """
+    """square class."""
+
     def __init__(self, size=0):
         """
-        the constructor for Square class
+        Initialise Constructor for Square class.
+
         Args:
         size (int) : the size of the square. defaults to Zero.
         """
@@ -21,8 +19,5 @@ class Square:
         self.__size = size
 
     def area(self):
-
-        """
-        getting the area of a square based on a certain size
-        """
+        """Get the area of a square based on a certain size."""
         return self.__size * self.__size
