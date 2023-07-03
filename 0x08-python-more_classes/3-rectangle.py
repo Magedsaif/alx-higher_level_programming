@@ -61,6 +61,8 @@ class Rectangle:
 
     def __str__(self):
         """Visualise the object representation."""
+        if self.__width == 0 or self.__height == 0:
+            return ""
         rows = []
         for x in range(self.__height):
             row = "#" * self.__width
