@@ -3,7 +3,7 @@
 
 
 def text_indentation(text):
-    """Prints text with 2 new lines.
+    """Print text with 2 new lines.
 
     Args:
         text (st): text given

@@ -1,0 +1,62 @@
+TESTS FOR 5-text_indentation.py
+================================
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+>>> text_indentation(7.8)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation("Hello   :")
+Hello   :
+<BLANKLINE>
+
+>>> text_indentation("        World   .")
+World   .
+<BLANKLINE>
+
+>>> text_indentation("Lorem Ipsum                ")
+Lorem Ipsum
+
+>>> text_indentation("       Dolor Sit")
+Dolor Sit
+
+>>> text_indentation("")
+
+>>> text_indentation("\n")
+<BLANKLINE>
+
+>>> text_indentation("\n.\n?\n:")
+<BLANKLINE>
+.
+<BLANKLINE>
+<BLANKLINE>
+?
+<BLANKLINE>
+<BLANKLINE>
+:
+<BLANKLINE>
+
+>>> text_indentation("    \n      ")
+<BLANKLINE>
+
+>>> text_indentation("   Hello. How are you? Everything good" + ".")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+Everything good.
+<BLANKLINE>
