@@ -11,5 +11,5 @@ def lookup(obj):
     Args:
         obj (object): object
     """
-    list = dir(obj)
-    return list
+    printed_list = dir(obj)
+    return printed_list
