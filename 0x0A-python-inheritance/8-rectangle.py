@@ -24,9 +24,10 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """Rectangle class inheriting from the base geometry class."""
+
     # constructor method to initialize instance variables of rectangle object
     def __init__(self, width, height):
-        """validate and initialize width and height
+        """Validate and initialize width and height.
 
         Args:
             width (int): width
