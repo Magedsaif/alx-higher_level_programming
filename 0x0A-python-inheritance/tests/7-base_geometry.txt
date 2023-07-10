@@ -1,0 +1,125 @@
+7-base_geometry.txt
+
+=======================
+How to Use 7-base_geometry.py
+=======================
+
+This module defines ``BaseGeometry `` class.
+
+Usage
+=====
+
+``MyList`` class have two Public instance methods ``area(self)`` raises an Exception and `` integer_validator(self, name, value)`` that validates value.
+
+::
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+::
+
+    >>> bg = BaseGeometry(None)
+    Traceback (most recent call last):
+    TypeError: BaseGeometry() takes no arguments
+
+::
+
+    >>> bg = BaseGeometry()
+
+::
+
+    >>> bg.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+::
+
+    >>> bg.area(1)
+    Traceback (most recent call last):
+    TypeError: area() takes 1 positional argument but 2 were given
+
+::
+
+    >>> bg.integer_validator("my_int", 12)
+
+::
+
+    >>> bg.integer_validator("my_int", [1, 2, 3])
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+::
+
+    >>> bg.integer_validator("my_int", (1, 2, 3))
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+::
+
+    >>> bg.integer_validator("my_int", 'MAGED')
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+::
+
+    >>> bg.integer_validator("my_int", 1.5)
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+::
+
+    >>> bg.integer_validator("my_int", {'a': 1})
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+::
+
+    >>> bg.integer_validator("my_int", None)
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+::
+
+    >>> bg.integer_validator("my_int", {1, 2, 3})
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+::
+
+    >>> bg.integer_validator("my_int", True)
+    Traceback (most recent call last):
+    TypeError: my_int must be an integer
+
+::
+
+    >>> bg.integer_validator("my_int", -3)
+    Traceback (most recent call last):
+    ValueError: my_int must be greater than 0
+
+::
+
+    >>> bg.integer_validator("my_int", 0)
+    Traceback (most recent call last):
+    ValueError: my_int must be greater than 0
+
+::
+
+    >>> bg.integer_validator("my_int")
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+::
+
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+::
+
+    >>> print(bg.integer_validator) # doctest: +ELLIPSIS
+    <bound method BaseGeometry.integer_validator of <7-base_geometry.BaseGeometry object at...>>
+
+::
+
+    >>> bg.integer_validator("my_int", 0, 1)
+    Traceback (most recent call last):
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
