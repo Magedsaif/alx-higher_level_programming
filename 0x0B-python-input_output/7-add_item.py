@@ -3,32 +3,17 @@
 
 
 import sys
-import json
+import os
 
 
-def save_to_json_file(my_obj, filename):
-    """Object to a text file, using a JSON representation."""
-    with open(filename, 'w', encoding="utf-8") as f:
-        # Use the `indent` parameter for pretty-printing.
-        return json.dump(my_obj, f)
+save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 
-
-def load_from_json_file(filename):
-    """Create an Object from a “JSON file”."""
-    with open(filename, 'r', encoding="utf-8") as f:
-        return json.load(f)
-
-
-def add_arguments_to_list(arguments):
-    try:
-        existing_list = load_from_json_file('add_item.json')
-    except FileNotFoundError:
-        existing_list = []
-
-    existing_list.extend(arguments)
-    save_to_json_file(existing_list, 'add_item.json')
-
-
-if __name__ == '__main__':
-    arguments = sys.argv[1:]
-    add_arguments_to_list(arguments)
+if os.path.exists('add_item.json') is True:
+    existing_list = list(load_from_json_file("add_item.json"))
+    for i in range(1, len(sys.argv)):
+        existing_list.append(sys.argv[i])
+    save_to_json_file(existing_list, "add_item.json")
+else:
+    existing_list = []
+    save_to_json_file(existing_list, "add_item.json")
