@@ -12,18 +12,18 @@ def main():
     for arg in sys.argv[1:]:
         list_argv.append(arg)
 
-    name = 'add_item.json'
+    file_name = 'add_item.json'
 
-    if not os.path.exists(name):
-        with open(name, 'w') as file:
+    if not os.path.exists(file_name):
+        with open(file_name, 'w') as file:
             file.write("[]")
 
-    existing_data = load_from_json_file(name)
+    existing_data = load_from_json_file(file_name)
     existing_data.extend(list_argv)
 
-    save_to_json_file(existing_data, name)
+    save_to_json_file(existing_data, file_name)
 
-    load_from_json_file(name)
+    load_from_json_file(file_name)
 
 
 if __name__ == "__main__":
