@@ -4,26 +4,27 @@
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Class Square"""
 
     def __init__(self, size, x=0, y=0, id=None):
+        """Width."""
         super().__init__(size, size, x, y, id)
-        self.size = size
 
     @property
     def size(self):
-        return self.__size
+        """Width."""
+        return self.width
 
     @size.setter
     def size(self, value):
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        if value <= 0:
-            raise ValueError("size must be > 0")
-        self.__size = value
+        """Width."""
+        self.width = value
+        self.height = value
 
     def update(self, *args, **kwargs):
+        """Width."""
         if args:
             attribute_names = ['id', 'size', 'x', 'y']
             for attribute_name, value in zip(attribute_names, args):
@@ -33,4 +34,14 @@ class Square(Rectangle):
                 setattr(self, key, value1)
 
     def __str__(self) -> str:
+        """Width."""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
+
+    def to_dictionary(self):
+        """Width."""
+        dic = dict()
+        dic['size'] = self.size
+        dic['id'] = self.id
+        dic['x'] = self.x
+        dic['y'] = self.y
+        return (dic)

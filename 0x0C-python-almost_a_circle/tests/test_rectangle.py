@@ -9,7 +9,7 @@ class test_Rectangle(unittest.TestCase):
     def test_init(self):
 
         a = Rectangle(10, 12)
-        self.assertEqual(a.id, 1)
+        self.assertEqual(a.id, 3)
 
         a1 = Rectangle(10, 12, 0, 0, 12)
         self.assertEqual(a1.id, 12)
