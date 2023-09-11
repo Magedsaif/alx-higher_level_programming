@@ -5,5 +5,5 @@ if (isNaN(parseInt(process.argv[2], 10))) {
 } else {
   for (let i = 0; i < parseInt(process.argv[2], 10); i++) {
     console.log('X'.repeat(parseInt(process.argv[2], 10)));
-    }
+  }
 }
