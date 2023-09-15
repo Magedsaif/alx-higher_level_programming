@@ -20,6 +20,6 @@ if __name__ == "__main__":
                 WHERE name LIKE %s ORDER BY id ASC"""
     cursor.execute(command, ('%' + parameter + '%',))
     for row in cursor.fetchall():
-            print(row)
+        print(row)
     cursor.close()
     connection.close()
