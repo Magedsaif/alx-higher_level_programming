@@ -11,10 +11,8 @@ class State(Base):
 
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String(129), nullable=False)
+    name = Column(String(128), nullable=False)
 
 
 engine = create_engine('mysql://root:root@localhost:3306/hbtn_0e_6_usa')
-Session = sessionmaker(bind=engine)
-session = Session()
 Base.metadata.create_all(engine)
